@@ -1,0 +1,99 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+:root{
+--primary:#13eca4;
+--dark:#10221c;
+--light:#f6f8f7;
+}
+
+body{background:var(--light);color:#222;}
+
+.navbar{
+background:var(--dark);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+
+.navbar a{color:#ddd;margin:0 10px;text-decoration:none;}
+.navbar a:hover{color:var(--primary);}
+.logo{font-size:22px;font-weight:bold;color:white;}
+
+.btn-primary{
+background:var(--primary);
+color:var(--dark);
+padding:10px 18px;
+border-radius:6px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.hero{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+url("https://images.unsplash.com/photo-1543353071-873f17a7a088");
+background-size:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+.hero h1{font-size:50px;}
+
+.menu-section{padding:80px 40px;}
+.menu-header{text-align:center;margin-bottom:40px;}
+.menu-header p{color:var(--primary);letter-spacing:3px;}
+
+.menu-nav{display:flex;justify-content:center;gap:30px;margin-bottom:40px;}
+.menu-category{max-width:1000px;margin:auto 0 50px;}
+
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
+
+.menu-item{border-bottom:1px solid #ccc;padding-bottom:10px;}
+.menu-item span{color:var(--primary);}
+
+.reservation-image{
+min-height:450px;
+background:
+linear-gradient(to right,#10221c 0%,transparent 30%),
+url("https://images.unsplash.com/photo-1528605248644-14dd04022da1");
+background-size:cover;
+border-radius:12px;
+}
+
+.gallery-card{position:relative;overflow:hidden;}
+.gallery-card img{transition:.5s;}
+.gallery-card:hover img{transform:scale(1.1);}
+.gallery-overlay{
+position:absolute;inset:0;
+background:linear-gradient(to top,#10221c,transparent);
+display:flex;align-items:flex-end;padding:15px;
+opacity:0;transition:.3s;color:white;
+}
+.gallery-card:hover .gallery-overlay{opacity:1;}
+
+.section{text-align:center;padding:60px 40px;}
+.footer{
+background:var(--dark);
+color:#aaa;
+text-align:center;
+padding:20px;
+
+}
+
+html{scroll-behavior:smooth;}
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}

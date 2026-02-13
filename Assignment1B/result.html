@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        body { font-family: Arial; }
+        .box {
+            width: 350px;
+            margin: auto;
+            border: 1px solid #000;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 align="center">Submitted Details</h2>
+
+<div class="box" id="resultBox"></div>
+
+<script>
+    let data = JSON.parse(localStorage.getItem("user"));
+
+    if (data) {
+        document.getElementById("resultBox").innerHTML = `
+            <p><b>Name:</b> ${data.name}</p>
+            <p><b>Mobile:</b> ${data.mobile}</p>
+            <p><b>Email:</b> ${data.email}</p>
+            <p><b>DOB:</b> ${data.dob}</p>
+            <p><b>Address:</b> ${data.address}</p>
+            <p><b>City:</b> ${data.city}</p>
+            <p><b>Gender:</b> ${data.gender}</p>
+            <p><b>Hobbies:</b> ${data.hobbies.join(", ")}</p>
+        `;
+    }
+</script>
+
+</body>
+</html>

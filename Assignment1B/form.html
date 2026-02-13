@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <script src="script.js" defer></script>
+    <style>
+        body { font-family: Arial; }
+        form { width: 350px; margin: auto; }
+        input, select, textarea { width: 100%; margin: 5px 0; padding: 6px; }
+        .pass-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pass-row input[type="password"] {
+    flex: 1;
+}
+
+.show-pass {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+</style>
+</head>
+<body>
+
+<h2 align="center">Registration Form</h2>
+
+<form id="regForm">
+
+    Name:
+    <input type="text" id="name" required
+        pattern="[A-Za-z ]+"
+        title="Only alphabets and spaces allowed">
+
+    Mobile:
+    <input type="text" id="mobile" required
+        pattern="[6-9][0-9]{9}"
+        title="10 digits, must start with 6–9">
+
+        Email:
+        <input type="email" id="email" required
+        pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+        title="Only Gmail addresses allowed">
+        
+
+        <div class="pass-row">
+            <label>Password:</label>
+            <input type="password" id="password" required
+            pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[#@$]).{8,}"
+            title="Min 8 chars, 1 capital, 1 digit, 1 special (# @ $)">
+        
+            <label class="show-pass">
+                <input type="checkbox" id="showPass"> Show
+            </label>
+        </div>
+        
+
+    Date of Birth:
+    <input type="date" id="dob" required>
+
+    Address:
+    <textarea id="address" rows="3" required></textarea>
+
+    City:
+    <select id="city" required>
+        <option value="">Select</option>
+        <option>Pune</option>
+        <option>Mumbai</option>
+        <option>Delhi</option>
+    </select>
+
+    Gender:
+    <br>
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <br><br>
+
+    Hobbies:
+    <br>
+    <input type="checkbox" value="Singing" class="hobby"> Singing
+    <input type="checkbox" value="Drawing" class="hobby"> Drawing
+    <input type="checkbox" value="Other" id="otherChk"> Other
+    <input type="text" id="otherText" placeholder="Specify other hobby">
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
