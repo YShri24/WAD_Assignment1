@@ -24,6 +24,16 @@
     gap: 4px;
     white-space: nowrap;
 }
+.option-group {
+    margin: 8px 0;
+}
+
+.option-group label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    gap: 5px;
+}
 
 </style>
 </head>
@@ -75,19 +85,31 @@
         <option>Delhi</option>
     </select>
 
-    Gender:
-    <br>
-    <input type="radio" name="gender" value="Male" required> Male
-    <input type="radio" name="gender" value="Female"> Female
-    <br><br>
-
-    Hobbies:
-    <br>
-    <input type="checkbox" value="Singing" class="hobby"> Singing
-    <input type="checkbox" value="Drawing" class="hobby"> Drawing
-    <input type="checkbox" value="Other" id="otherChk"> Other
+    <div class="option-group">
+        Gender:
+        <label>
+            <input type="radio" name="gender" value="Male" required> Male
+        </label>
+        <label>
+            <input type="radio" name="gender" value="Female"> Female
+        </label>
+    </div>
+    
+    <div class="option-group">
+        Hobbies:
+        <label>
+            <input type="checkbox" value="Singing" class="hobby"> Singing
+        </label>
+        <label>
+            <input type="checkbox" value="Drawing" class="hobby"> Drawing
+        </label>
+        <label>
+            <input type="checkbox" value="Other" id="otherChk"> Other
+        </label>
+    </div>
+    
     <input type="text" id="otherText" placeholder="Specify other hobby">
-    <br><br>
+    
 
     <button type="submit">Submit</button>
 

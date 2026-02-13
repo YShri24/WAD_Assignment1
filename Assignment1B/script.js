@@ -13,8 +13,12 @@ document.getElementById("regForm").addEventListener("submit", function(e) {
     }
 
     if (age < 18) {
-    alert("You must be at least 18 years old.");
+    alert("You must be at least 18 years old .");
     return;
+    }
+    else if(age>60){
+        alert("You must be at most 60 years old .");
+        return;
     }
 
     // Get hobbies
@@ -50,18 +54,12 @@ document.getElementById("regForm").addEventListener("submit", function(e) {
     // Store in localStorage
     localStorage.setItem("user", JSON.stringify(userData));
 
-    // AJAX POST simulation
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "result.html", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
+   // Store in localStorage
+localStorage.setItem("user", JSON.stringify(userData));
 
-    xhr.onload = function() {
-        if (xhr.status === 200 || xhr.status === 0) {
-            window.location.href = "result.html";
-        }
-    };
+// Redirect to result page
+window.location.href = "result.html";
 
-    xhr.send(JSON.stringify(userData));
 });
 
 
